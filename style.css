@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+}
+
+.hide {
+    display: none !important;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.container {
+    background-color: rgb(238, 204, 153);
+}
+
+.action {
+    display: flex;
+    column-gap: 10px;
+    background-color: tomato;
+}
+
+.view-pdf {
+    display: flex;
+    height: calc(100vh - 30px);
+}
+
+.sidebar-left {
+    width: 40%;
+    overflow-y: auto;
+}
+
+.wrapper-sidebar {
+    display: flex;
+    flex-flow: row wrap;
+    height:100%;
+}
+
+.header-sidebar {
+    height: 400px;
+}
+
+.body-sidebar {
+    border-top: 1px solid red;
+    height: 100%;
+    width: 100%;
+}
+
+.main-content {
+    width: 60%;
+    background-color: #ccc;
+}
+
+.pdf-document {
+    border: 1px solid rgb(128, 0, 58);
+    width: 200px;
+    height: 200px;
+}
+
+.signature {
+    border: 1px solid green;
+    width: 100px;
+    height: 100px;
+}

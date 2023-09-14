@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ký số</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.korzh.com/metroui/v4.5.1/css/metro-all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.korzh.com/metroui/v4.5.1/js/metro.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="action">
+        <input id="input-pdf" type="file" />
+        <button onclick="document.getElementById('input-img').click()">
+          Chọn chữ ký
+        </button>
+        <input id="input-img" type="file" style="display: none" />
+        <button id="get-token">Lấy token</button>
+        <button id="get-otp">Lấy OTP</button>
+        <button id="e-sign" style="background-color: yellowgreen">Ký số</button>
+      </div>
+      <div class="view-pdf">
+        <div class="sidebar-left">
+          <div class="wrapper-sidebar">
+            <div class="header-sidebar">
+              Username:<input id="username" type="text" style="width: 120px" />
+              Pass:<input id="password" type="password" style="width: 100px" />
+              <br />
+              Token:<input id="token" type="text" style="width: 360px" /><br />
+              PassCode:<input id="passcode" type="text" /> OTP:<input
+                id="otp"
+                type="text"
+                style="width: 80px"
+              />
+              <br />
+              Trang số:<input id="page-no" type="text" style="width: 30px" /> Vị
+              trí:<input
+                id="position-indentifier"
+                type="text"
+                style="width: auto"
+              /><br />
+              Kiểu chữ:
+              <select id="font-style" style="width: 100px">
+                <option value="ARIAL">ARIAL</option>
+                <option value="TAHOMA">TAHOMA</option>
+                <option value="TIMES">TIMES</option>
+                <option value="VERDANA">VERDANA</option>
+                <option value="SCRIPTURE">SCRIPTURE</option>
+                <option value="HELVETICA">HELVETICA</option>
+              </select>
+              Cỡ chữ:<input id="font-size" type="text" style="width: 30px" />
+              Màu chữ:<select id="text-color" style="width: 100px">
+                <option value="yellow">yellow</option>
+                <option value="blue">blue</option>
+                <option value="cyan">cyan</option>
+                <option value="dark_gray">Dark Gray</option>
+                <option value="gray">gray</option>
+                <option value="green">green</option>
+                <option value="light_gray">Light Gray</option>
+                <option value="magenta">magenta</option>
+                <option value="orange">orange</option>
+                <option value="pink">pink</option>
+                <option value="red">red</option>
+                <option value="white">white</option>
+              </select>
+              <div class="show-pdf-img">
+                <div class="grid">
+                  <div class="row">
+                    <div class="cell">
+                      <div class="pdf-document">
+                        <iframe
+                          id="pdf"
+                          style="width: 100%; height: 100%"
+                        ></iframe>
+                      </div>
+                    </div>
+                    <div class="cell">
+                      <div class="signature">
+                        <img
+                          id="signature"
+                          style="width: 100%; height: 100%; object-fit: fill"
+                        />
+                        <input id="print-sign" type="checkbox" />
+                        <label>In</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <label>Trạng thái: </label>
+              <div id="show-status"></div>
+            </div>
+            <div class="body-sidebar">
+              <div class="grid">
+                <div class="row">
+                  <div class="cell">
+                    <button id="load-option">Nạp dữ liệu</button>
+                  </div>
+                  <div class="cell">
+                    <button id="update-option" class="hide">Thiết lập</button>
+                  </div>
+                  <div class="cell">
+                    <button
+                      id="default-option"
+                      onclick="return confirm('Bạn có chắc chắn không?')"
+                    >
+                      Mặc định
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <textarea
+                id="show-info"
+                style="width: 100%; height: 100%"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="main-content">
+          <iframe id="show-result" style="width: 100%; height: 100%"></iframe>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
